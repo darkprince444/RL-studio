@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Product Details</div>
+    </header>
+    
+    <div class="product-detail-container">
+        <!-- Product image -->
+        <img id="product-image" src="" alt="Product Image" style="max-width: 100%; height: auto; border: 2px solid #000;">
+        
+        <h1 id="product-name">Product Name</h1>
+        <hr>
+        <p><strong>Price: </strong>Rs<span id="product-price"></span></p>
+        <hr>
+        <div>
+            <h2>Contact details:-</h2>
+            <p>Phone:- 72050 59432</p>
+            <a href="https://wa.me/917205059432">whatsapp</a>
+        </div>
+    </div>
+    <script>
+        // Extract query parameters from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+        const productName = urlParams.get('name');
+        const productPrice = urlParams.get('price');
+        const productImage = urlParams.get('image');  // Get the image URL from query parameters
+
+        // Populate the product details in the page
+        document.getElementById('product-name').textContent = productName;
+        document.getElementById('product-price').textContent = productPrice;
+
+        // Set the image source dynamically
+        document.getElementById('product-image').src = productImage;
+    </script>
+</body>
+</html>
