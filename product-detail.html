@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1 style="text-align: center;">PRODUCT DETAILS</h1>
+        </div>
+    </header>
+    <hr>
+    <div class="product-detail-container">
+        <!-- Product image -->
+        <img id="product-image" src="" alt="Product Image" style="width: 70%; height: auto; border: 2px solid #000; display: block; margin-left: auto; margin-right: auto;">
+        
+        <h1 id="product-name">Product Name</h1>
+        <hr>
+        <h1>Specification</h1>
+        <hr>
+        <div>
+            <h2>In The Box</h2>
+            <hr>
+        </div>
+        <div><h3>Number of Contents in Sales Package:-</h3></div>
+        <p><span id="product-number"></span></p>
+        <hr>
+        <div>
+            <div>
+                <h3>General</h3>
+            </div>
+            <table>
+                <tbody>
+                    <tr>
+                    <td>
+                        Brand
+                    </td>
+                    <td>
+                        <ul>
+                            <li id="product-brand">
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Series
+                    </td>
+                    <td>
+                        <ul>
+                            <li id="product-series">
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Color
+                    </td>
+                    <td>
+                        <ul>
+                            <li id="product-color">
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Type
+                    </td>
+                    <td>
+                        <ul>
+                            <li id="product-type">
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        External Material
+                    </td>
+                    <td>
+                        <ul>
+                            <li id="product-externalmaterial">
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Filling Material
+                        </td>
+                        <td>
+                            <ul>
+                                <li id="product-fillingmaterial">
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Design
+                        </td>
+                        <td>
+                            <ul>
+                                <li id="product-design">
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            With Cover
+                        </td>
+                        <td>
+                            <ul>
+                                <li id="product-withcover">
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Sweat Absorbent
+                            </td>
+                            <td>
+                                <ul>
+                                    <li id="product-sweatabsorbent">
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Model Name
+                            </td>
+                            <td>
+                                <ul>
+                                    <li id="product-modelname">
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Model ID
+                            </td>
+                            <td>
+                                <ul>
+                                    <li id="product-modelid">
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Net Quantity
+                            </td>
+                            <td>
+                                <ul>
+                                    <li id="product-netquantity">
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        <p>
+            <strong>
+                Price: 
+            </strong>
+            Rs
+            <span id="product-price">
+            </span>
+        </p>
+        <hr>
+        <div>
+            <h2>Contact details:-</h2>
+            <p>Phone:-+91 72050 59432</p>
+            <a href="https://wa.me/917205059432">whatsapp</a>
+        </div>
+    </div>
+    <script>
+        // Extract query parameters from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+        const productImage = urlParams.get('image');
+        const productName = urlParams.get('name');
+        const productNumber = urlParams.get('number');
+        const productBrand = urlParams.get('brand');
+        const productSeries = urlParams.get('series');
+        const productColor = urlParams.get('color');
+        const productType = urlParams.get('type');
+        const productExternalMaterial = urlParams.get('externalmaterial');
+        const productFillingMaterial  = urlParams.get('fillingmaterial');
+        const productDesign = urlParams.get('desine');
+        const productWithCover = urlParams.get('withcover');
+        const productSweatAbsorbent = urlParams.get('sweatabsorbent');
+        const productModelName = urlParams.get('modelname');
+        const productModelID = urlParams.get('modelid');
+        const productNetQuantity = urlParams.get('netquantity');
+        const productPrice = urlParams.get('price');  // Get the image URL from query parameters
+
+        // Populate the product details in the page
+        document.getElementById('product-name').textContent = productName;
+        document.getElementById('product-number').textContent = productNumber;
+        document.getElementById('product-brand').textContent = productBrand;
+        document.getElementById('product-series').textContent = productSeries;
+        document.getElementById('product-color').textContent = productColor;
+        document.getElementById('product-type').textContent = productType;
+        document.getElementById('product-externalmaterial').textContent = productExternalMaterial;
+        document.getElementById('product-fillingmaterial').textContent = productFillingMaterial;
+        document.getElementById('product-design').textContent = productDesign;
+        document.getElementById('product-withcover').textContent = productWithCover;
+        document.getElementById('product-sweatabsorbent').textContent = productSweatAbsorbent;
+        document.getElementById('product-modelname').textContent = productModelName;
+        document.getElementById('product-modelid').textContent = productModelID;
+        document.getElementById('product-netquantity').textContent = productNetQuantity;
+        document.getElementById('product-price').textContent = productPrice;
+
+
+        // Set the image source dynamically
+        document.getElementById('product-image').src = productImage;
+    </script>
+</body>
+</html>
